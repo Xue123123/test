@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="{WEB_PATH}Admin/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="{WEB_PATH}Admin/css/global.css" media="all">
+		<link rel="stylesheet" href="{WEB_PATH}Admin/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{WEB_PATH}Admin/css/table.css" />
+	</head>
+
+	<body>
+		<div class="admin-main">
+
+			<blockquote class="layui-elem-quote">
+				<a href="javascript:;" class="layui-btn layui-btn-small" id="add">
+					<i class="layui-icon">&#xe608;</i> 添加信息
+				</a>
+				<a href="#" class="layui-btn layui-btn-small" id="import">
+					<i class="layui-icon">&#xe608;</i> 导入信息
+				</a>
+				<a href="#" class="layui-btn layui-btn-small">
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i> 导出信息
+				</a>
+				<!-- <a href="javascript:;" class="layui-btn layui-btn-small" id="search">
+					<i class="layui-icon">&#xe615;</i> 搜索
+				</a> -->
+			</blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>客户列表</legend>
+				<div class="layui-field-box">
+				   <form  name='form1' method="post" target="_self">
+					用户名<input type="text" name="customername"  value="{$_POST['customername']}" />
+					手机号<input type="text" name="phone"  value="{$_POST['phone']}" />
+					<input type="hidden" id='epage'  name="epage" value="1">
+					<button type="submit" id="search">搜索</button>
+				   </form>
+					<table class="site-table table-hover">
+						<thead>
+							<tr>
+								<!-- <th><input type="checkbox" id="selected-all"></th> -->
+								<th>客户编号</th>
+								<th>客户姓名</th>
+								<th>性别</th>
+								<th>出生日期</th>
+								<th>职业</th>
+								<th>身份证号</th>
+								<th>银行卡号</th>
+								<th>联系电话</th>
+								<th>代理商编号</th>
+								<th>销售经理编号</th>
+								<th>备注</th>
+								<th>创建时间</th>
+								<th>账号状态</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="con">
+						    {php $flag=array(1=>'正常',2=>'停用');}
+                            <!-- {php $types=array(1=>'超级管理员',2=>'渠道商管理员',3=>'普通管理员');} -->
+						    <!-- {php  $admins=sql_tag_get('{admin}') ; } -->
+						    {loop $re $r}
+							<tr>
+								<!-- <td><input type="checkbox"></td> -->
+								<td>{$r[customerid]}</td>
+								<td>{$r[customername]}</td>
+								<td>{$r[sex]}</td>
+								<td>{$r[brith]}</td>
+								<td>{$r[occupation]}</td>
+								<td>{$r[idnumber]}</td>
+								<td>{$r[cardnumber]}</td>
+								<td>{$r[phone]}</td>
+								<td>{$r[agent_id]}</td>
+								<td>{$r[salesmane_id]}</td>
+								<td>{$r[remark]}</td>
+								<td>{$r[inserttime]}</td>
+								<td>{$flag[$r[flag]]}</td>
+								<!-- <td style="text-align:center;"><i class="layui-icon" style="color:green;"></i></td> -->
+								<td>
+									<!-- <a href="/detail-1" target="_blank" class="layui-btn layui-btn-normal layui-btn-mini">预览</a> -->
+									<a href="{WEB_PATH}index.php?m=admin&c=customer&a=chenge&customerid={$r[customerid]}" class="layui-btn layui-btn-mini">编辑</a>
+								<!-- 	<a href="javascript:;" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a> -->
+								</td>
+							</tr>
+							{/loop}							
+						</tbody>
+
+					</table>
+
+				</div>
+			</fieldset>
+			<!-- <div class="admin-table-page"></div> -->
+				<div id="page" class="page">
+		<!-- 		<div id="paged"></div> -->
+				</div>
+			
+		</div>
+
+		<script type="text/javascript" src="{WEB_PATH}Admin/plugins/layui/layui.js"></script>
+		<script>
+			layui.config({
+				base: '{WEB_PATH}Admin/plugins/layui/modules/'
+			});
+
+			layui.use(['icheck', 'laypage','layer'], function() {
+				var $ = layui.jquery,
+					laypage = layui.laypage,
+					layer = parent.layer === undefined ? layui.layer : parent.layer;
+				$('input').iCheck({
+					checkboxClass: 'icheckbox_flat-green'
+				});
+
+				// //page
+				// laypage({
+				// 	cont: 'page',
+				// 	pages: 25 //总页数
+				// 		,
+				// 	groups: 5 //连续显示分页数
+				// 		,
+				// 	jump: function(obj, first) {
+				// 		//得到了当前页，用于向服务端请求对应数据
+				// 		var curr = obj.curr;
+				// 		if(!first) {
+				// 			//layer.msg('第 '+ obj.curr +' 页');
+				// 		}
+				// 	}
+				// });
+			
+				// $('#search').on('click', function() {
+				// 	parent.layer.alert('你点击了搜索按钮')
+				// });
+
+				$('#add').on('click', function() {
+					$.get('temp/edit-form.html', null, function(form) {
+						layer.open({
+							type: 1,
+							title: '添加表单',
+							content: form,
+							btn: ['保存', '取消'],
+							area: ['600px', '400px'],
+							maxmin: true,
+							yes: function(index) {
+								console.log(index);
+							},
+							full: function(elem) {
+								var win = window.top === window.self ? window : parent.window;
+								$(win).on('resize', function() {
+									var $this = $(this);
+									elem.width($this.width()).height($this.height()).css({
+										top: 0,
+										left: 0
+									});
+									elem.children('div.layui-layer-content').height($this.height() - 95);
+								});
+							}
+						});
+					});
+				});
+
+				$('#import').on('click', function() {
+					var that = this;
+					var index = layer.tips('只想提示地精准些', that,{tips: [1, 'white']});
+					$('#layui-layer'+index).children('div.layui-layer-content').css('color','#000000');
+				});
+
+				$('.site-table tbody tr').on('click', function(event) {
+					var $this = $(this);
+					var $input = $this.children('td').eq(0).find('input');
+					$input.on('ifChecked', function(e) {
+						$this.css('background-color', '#EEEEEE');
+					});
+					$input.on('ifUnchecked', function(e) {
+						$this.removeAttr('style');
+					});
+					$input.iCheck('toggle');
+				}).find('input').each(function() {
+					var $this = $(this);
+					$this.on('ifChecked', function(e) {
+						$this.parents('tr').css('background-color', '#EEEEEE');
+					});
+					$this.on('ifUnchecked', function(e) {
+						$this.parents('tr').removeAttr('style');
+					});
+				});
+				$('#selected-all').on('ifChanged', function(event) {
+					var $input = $('.site-table tbody tr td').find('input');
+					$input.iCheck(event.currentTarget.checked ? 'check' : 'uncheck');
+				});
+
+					laypage({
+					cont: 'page',
+					pages: {$page_total} ,
+					groups: 5 ,
+					curr:{$page},
+					jump: function(obj, first) {
+						//得到了当前页，用于向服务端请求对应数据
+						var curr = obj.curr;
+						if(!first) {
+							//layer.msg('第 '+ obj.curr +' 页');
+							form1.action  = '{_URL_NO_PAGE_}' + '&page='+ curr ;
+							$('#epage').attr('value', '0' ) ;  
+							form1.submit() ;
+						}
+					}
+				});
+
+			});
+		</script>
+
+	</body>
+</html>

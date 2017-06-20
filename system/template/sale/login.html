@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>用户登录</title>
+<link href="{WEB_PATH}Admin/css/index.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+    function orient() {
+        //alert('gete');
+        if (window.orientation == 0 || window.orientation == 180) {
+            $("body").attr("class", "landscape");
+            orientation = 'landscape';
+            return false;
+        }
+        else if (window.orientation == 90 || window.orientation == -90) {
+            $("body").attr("class", "landscape");
+            orientation = 'landscape';
+   
+            return false;
+        }
+    }
+   
+   
+    $(function(){
+        orient();
+    });
+   
+   
+    $(window).bind( 'orientationchange', function(e){
+        orient();
+    });
+
+</script>
+</head>
+<body>
+<div class="all">
+
+	<div class="logo"><img src="{WEB_PATH}Admin/images/logo.png" /></div> 
+    <form action="" class="layui-form" method="post" name='form_login'>
+    <div class="login">
+    	<div class="num"><i class="icon-user"></i><input type="text" class="number"  name="user" lay-verify="username" autocomplete="off"  placeholder="请输入账号"></div>
+        <div class="pwd"><i class="icon-pwd"></i><input type="password" class="password" name="passwd" lay-verify="password"  autocomplete="off"  placeholder="请输入密码"></div>
+        <div class="denglu">
+        	<input type="submit" value="登录"  class="btn1">	
+        </div>
+    </form>
+    </div>
+
+</div>
+  <!--       <script type="text/javascript" src="{WEB_PATH}Admin/plugins/layui/layui.js"></script>
+        <script>
+            layui.use(['layer', 'form'], function() {
+                var layer = layui.layer,
+                    $ = layui.jquery,
+                    form = layui.form();
+                    
+                form.on('submit(login)',function(data){
+                    
+                    form_login.submit();
+                    return false;
+                });
+            });
+        </script> -->
+</body>
+</html>

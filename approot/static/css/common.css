@@ -1,0 +1,25 @@
+/*--------------------------------------------------|
+| dTree 2.05 | www.destroydrop.com/javascript/tree/ |
+|---------------------------------------------------|
+| Copyright (c) 2002-2003 Geir Landrö               |
+|--------------------------------------------------*/
+
+.hideBox {
+	
+	font-size: 11px;
+	color: #666;
+	white-space:all;
+	position: absolute;
+	top:50%;
+	left: 50%; 
+	margin-top: -150px;
+	margin-left: -250px;
+	display: none;
+	width: 500px;
+	background-color: #fff;
+	border:1px solid #eee;
+	z-index:99;
+	padding:20px;
+	padding-top: 5px;
+
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>无标题文档</title>
+<link href="{WEB_PATH}Admin/css/index.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{WEB_PATH}Admin/js/jquery.js"></script>
+<script type="text/javascript" src="{WEB_PATH}Admin/js/superslide.2.1.js"></script>
+</head>
+
+<body>
+	<div class="suoyou">
+    	<div class="banner">
+        	<div class="fullSlide">
+				<div class="bd">
+					<ul>
+                     	<li style="background:url({WEB_PATH}Admin/images/index1.png) 50% 0 no-repeat;"><a href="" target="_blank"> </a></li>
+						<li style="background:url({WEB_PATH}Admin/images/index2.png) 50% 0 no-repeat;"><a href="" target="_blank"> </a></li>
+					</ul>
+				</div>
+				<div class="hd"><ul></ul></div>
+			</div>
+        </div>
+        <div class="sect">
+        	<div class="sect1"><p><img src="{WEB_PATH}Admin/images/index3.png"></p><p>基金</p></div>
+            <div class="sect2"><p><img src="{WEB_PATH}Admin/images/index4.png"></p><p>债券</p></div>
+            <div class="sect3"><p><img src="{WEB_PATH}Admin/images/index5.png"></p><p>股票</p></div>
+            <div class="sect4"><p><img src="{WEB_PATH}Admin/images/index6.png"></p><p>调查</p></div>
+        </div>
+        <div class="advert"><div class="advert1"></div></div>
+        <div class="show">
+        	<div class="dinq">
+            	<div class="dingq-left"><img src="{WEB_PATH}Admin/images/index8.png">定期</div>
+                <div class="dingq-right">更多&gt;</div>
+            </div>
+            <div class="xiq">
+            	<div class="xiq-left">
+                	<p class="xiqnum">6.2%</p>
+                    <p class="xiqyu">预期年化收益率</p>
+                </div>
+                <div class="xiq-right">
+                	<div class="qix">期限100天</div>
+                    <div class="gus">固收理财</div>
+                    <div class="qit">5000元起投</div>
+                </div>
+            </div>
+            <div class="xiq">
+            	<div class="xiq-left">
+                	<p class="xiqnum">6.2%</p>
+                    <p class="xiqyu">预期年化收益率</p>
+                </div>
+                <div class="xiq-right">
+                	<div class="qix">期限100天</div>
+                    <div class="gus">固收理财</div>
+                    <div class="qit">5000元起投</div>
+                </div>
+            </div>
+            <div class="xiq">
+            	<div class="xiq-left">
+                	<p class="xiqnum">6.2%</p>
+                    <p class="xiqyu">预期年化收益率</p>
+                </div>
+                <div class="xiq-right">
+                	<div class="qix">期限100天</div>
+                    <div class="gus">固收理财</div>
+                    <div class="qit">5000元起投</div>
+                </div>
+            </div>
+            <div class="xiq">
+            	<div class="xiq-left">
+                	<p class="xiqnum">6.2%</p>
+                    <p class="xiqyu">预期年化收益率</p>
+                </div>
+                <div class="xiq-right">
+                	<div class="qix">期限100天</div>
+                    <div class="gus">固收理财</div>
+                    <div class="qit">5000元起投</div>
+                </div>
+            </div>
+        </div>
+        <div class="bot">
+        	<div class="bottom">
+            	<div class="bot1"><p><img src="{WEB_PATH}Admin/images/index9.png"></p><p>公司介绍</p>
+                </div>
+                <div class="bot2"><p><img src="{WEB_PATH}Admin/images/index10.png"></p><p>理财</p>
+                </div>
+                <div class="bot3"><p><img src="{WEB_PATH}Admin/images/index11.png"></p><p>客户信息</p>
+                </div>
+                <div class="bot4"><p><img src="{WEB_PATH}Admin/images/index12.png"></p><p>销售记录</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(".fullSlide").hover(function(){
+    $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+},
+function(){
+    $(this).find(".prev,.next").fadeOut()
+});
+$(".fullSlide").slide({
+    titCell: ".hd ul",
+    mainCell: ".bd ul",
+    effect: "fold",
+    autoPlay: true,
+    autoPage: true,
+    trigger: "click",
+    startFun: function(i) {
+        var curLi = jQuery(".fullSlide .bd li").eq(i);
+        if ( !! curLi.attr("_src")) {
+            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+        }
+    }
+});
+</script>
+</html>

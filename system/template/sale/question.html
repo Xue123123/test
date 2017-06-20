@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>无标题文档</title>
+<link href="{WEB_PATH}Admin/css/index.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{WEB_PATH}Admin/js/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+    $('.questi label').click(function(){
+        if(!$(this).hasClass('on')){
+            $(this).addClass('on').siblings().removeClass('on');
+            $('#radioInput').val($(this).attr('data-val'));
+        }else{
+             $(this).removeClass('on');
+            $('#radioInput').val($(this).attr('0'));
+        }
+    })
+
+})
+</script>
+</head>
+<body>
+	<div class="question"></div>
+    <div class="gdz">
+    	<p>尊敬的投资者：</p>
+  		<p style="text-indent:2em;">您好！非常感谢您对长汇资产的信任，感谢您给予我们这个机会，为您实现资产增值！首先，我们将通过一组测试，为您进行风险测评，为您的投资风险承受能力做出相对客观的评价，以便我们更好地结合您的实际情况为您提供个性化专属的资产配置和财富管理方案。</p>
+    </div>
+    <div class="xzt">
+    	<ul class="ques">
+        	<li class="questi"><img src="{WEB_PATH}Admin/images/question2.png">您的性别？
+            	<ul class="answer">
+                	<li class="answ"><label data-val="0"><i></i>男</label></li>
+                    <li class="answ"><label data-val="0"><i></i>女</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+            <li class="questi"><img src="{WEB_PATH}Admin/images/question5.png">您的年龄？
+            	<ul class="answer">
+                	<li class="answ"><label data-val="1"><i></i>A.20岁-35岁</label></li>
+                    <li class="answ"><label data-val="2"><i></i>B.35岁-45岁</label></li>
+                    <li class="answ"><label data-val="3"><i></i>C.45岁-55岁</label></li>
+                    <li class="answ"><label data-val="5"><i></i>D.55岁以上</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+            <li class="questi"><img src="{WEB_PATH}Admin/images/question6.png">您的生活情况是:
+            	<ul class="answer">
+                	<li class="answ"><label data-val="1"><i></i>A.单身或结婚不久，没有子女，父母还年轻，无需赡养</label></li>
+                    <li class="answ"><label data-val="2"><i></i>B.简单的三口之家，父母刚退休不久，有固定收入</label></li>
+                    <li class="answ"><label data-val="3"><i></i>C.子女正在读书，父母需要赡养，家庭负担较重</label></li>
+                    <li class="answ"><label data-val="4"><i></i>D.子女已经经济独立，并且本人已退休，有固定收入</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+            <li class="questi"><img src="{WEB_PATH}Admin/images/question7.png">您目前的年收入状况是：
+            	<ul class="answer">
+                	<li class="answ"><label data-val="1"><i></i>A.五十万以上并有周详的理财计划 </label></li>
+                    <li class="answ"><label data-val="2"><i></i>B.十万以上并且有完备的养老保险计划</label></li>
+                    <li class="answ"><label data-val="3"><i></i>C.五万以上并且进行一定数量的投资</label></li>
+                    <li class="answ"><label data-val="4"><i></i>D.收支相抵或有外债</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+            <li class="questi"><img src="{WEB_PATH}Admin/images/question8.png">您是否有过投资理财经历？
+            	<ul class="answer">
+                	<li class="answ"><label data-val="1"><i></i>A.没有</label></li>
+                    <li class="answ"><label data-val="2"><i></i>B.有，少于3年</label></li>
+                    <li class="answ"><label data-val="3"><i></i>C.有，3-5年 </label></li>
+                    <li class="answ"><label data-val="4"><i></i>D.有，超过5年</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+            <li class="questi"><img src="{WEB_PATH}Admin/images/question9.png">以下几种投资方案，哪一种跟您比较接近？
+            	<ul class="answer">
+                	<li class="answ"><label data-val="1"><i></i>A.除存款、国债外，几乎没买过其他金融产品</label></li>
+                    <li class="answ"><label data-val="2"><i></i>B.80%左右的钱用于存款、国债、银行理财产品、余额宝等，20%左右的钱用于购买保险、股票、基金</label></li>
+                    <li class="answ"><label data-val="3"><i></i>C.三分之一的钱用于存款、国债、余额宝、银行理财产品等，三分之一的钱用于保险、信托产品等，三分之一的钱用于股票、基金</label></li>
+                    <li class="answ"><label data-val="4"><i></i>D.80%左右的钱用于购买股票、基金、保险产品等，20%的钱用于存款、银行理财等</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+            <li class="questi"><img src="{WEB_PATH}Admin/images/question10.png">您在投资理财中是否遭遇过损失？
+            	<ul class="answer">
+                	<li class="answ"><label data-val="1"><i></i>A.没有，因为我几乎没有做过高风险投资</label></li>
+                    <li class="answ"><label data-val="2"><i></i>B.我赔钱的时候多，总体算有亏损</label></li>
+                    <li class="answ"><label data-val="3"><i></i>C.我有时挣钱有时赔钱，总体算每年投资收益于定期存款</label></li>
+                    <li class="answ"><label data-val="4"><i></i>D. 我赚钱的时候多，总体算每年10%以上收益率</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+            <li class="questi"><img src="{WEB_PATH}Admin/images/question11.png">以下几项投资理财目标，您最看重的是哪一项？
+            	<ul class="answer">
+                	<li class="answ"><label data-val="1"><i></i>A.每年获得高于银行定期存款的收益，并且持续很多年</label></li>
+                    <li class="answ"><label data-val="2"><i></i>B.获得短期的高收益 </label></li>
+                    <li class="answ"><label data-val="3"><i></i>C.在通货膨胀时资产不贬值</label></li>
+                    <li class="answ"><label data-val="4"><i></i>D.保住本金</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+            <li class="questi"><img src="{WEB_PATH}Admin/images/question12.png">假如您参加一项有奖竞赛节目，下列情形中，您会选择哪一种？
+            	<ul class="answer">
+                	<li class="answ"><label data-val="1"><i></i>A.有100%的机会赢取1000元现金</label></li>
+                    <li class="answ"><label data-val="2"><i></i>B.有50%的机会赢取5万元的现金</label></li>
+                    <li class="answ"><label data-val="3"><i></i>C.有20%的机会赢取50万元现金</label></li>
+                    <li class="answ"><label data-val="4"><i></i>D.有10%的机会赢取100万元现金</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+            <li class="questi"><img src="{WEB_PATH}Admin/images/question13.png">假设有几种投资产品，您必须并且只能选择其中一个进行投资，那您会选择哪一个？
+            	<ul class="answer">
+                	<li class="answ"><label data-val="1"><i></i>A.最好的情况下会赚3万元，最差的情况下没有损失</label></li>
+                    <li class="answ"><label data-val="2"><i></i>B.最好的情况下会赚10万元，最差的情况下损失3万元</label></li>
+                    <li class="answ"><label data-val="3"><i></i>C.最好的情况会赚50万元，最差的情况下会损失20万元</label></li>
+                    <li class="answ"><label data-val="4"><i></i>D.最好的情况会赚100万元，最差的情况下损失50万元</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+            <li class="questi"><img src="{WEB_PATH}Admin/images/question14.png">投资后，您通常会采取什么态度？
+            	<ul class="answer">
+                	<li class="answ"><label data-val="1"><i></i>A.放心地交给理财平台，等候长期收益</label></li>
+                    <li class="answ"><label data-val="2"><i></i>B.偶尔查看一下自己的账户，关注收益进展</label></li>
+                    <li class="answ"><label data-val="3"><i></i>C.试水般少量投资，待自己觉得安全后再追加</label></li>
+                    <li class="answ"><label data-val="4"><i></i>D.自己觉得安全后，推荐朋友投资</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+            <li class="questi"><img src="{WEB_PATH}Admin/images/question15.png">对于自己投资经验的评价？
+            	<ul class="answer">
+                	<li class="answ"><label data-val="1"><i></i>A.很有经验，乐于冒险</label></li>
+                    <li class="answ"><label data-val="2"><i></i>B.有一定的投资经验，敢于冒险</label></li>
+                    <li class="answ"><label data-val="3"><i></i>C.投资经验很少，有一定的投资收益</label></li>
+                    <li class="answ"  style="margin-bottom:30px;"><label data-val="4"><i></i>D.没有经验，新手上路</label></li>
+                    <input type="hidden" name="radio" id="radioInput" />
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<body>
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header header header-demo">
+				<div class="layui-main">
+					<div class="admin-login-box">
+						<a class="logo" style="left: 0;" href="">
+							<span style="font-size: 22px;">ChangHui  Admin</span>
+						</a>
+						<div class="admin-side-toggle">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+						</div>
+					</div>
+					<ul class="layui-nav admin-header-item">
+						<li class="layui-nav-item">
+							<a href="javascript:;">清除缓存</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">浏览网站</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;" class="admin-header-user">
+								<img src="{WEB_PATH}Admin/images/0.jpg" />
+								<span>{$_SESSION['username']}</span>
+							</a>
+							<dl class="layui-nav-child">
+								<dd>
+							<a href="{WEB_PATH}index.php?m=admin&c=index&a=chenge&adminid=1" target="_right">
+									<i class="fa fa-user-circle" aria-hidden="true"></i> 个人信息</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">
+									<i class="fa fa-gear" aria-hidden="true"></i> 设置密码</a>
+								</dd>
+								<dd>
+									<a href="{WEB_PATH}index.php?m=admin&c=index&a=logout"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+					<ul class="layui-nav admin-header-item-mobile">
+						<li class="layui-nav-item">
+							<a href="{WEB_PATH}index.php?m=admin&c=index&a=logout">
+							<i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="layui-side layui-bg-black" id="admin-side">
+<!-- 			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+				<legend>垂直导航菜单</legend>
+			</fieldset>
+ -->
+			<ul class="layui-nav layui-nav-tree">
+				<li class="layui-nav-item layui-nav-itemed">
+					<a href="javascript:;">管理员</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="{WEB_PATH}index.php?m=admin&c=agent&a=alist"  target="_right" >[管理员列表]</a>
+						</dd>
+						<dd>
+							<a href="{WEB_PATH}index.php?m=admin&c=agent&a=add"  target="_right" >[添加管理员]</a>
+						</dd>
+					</dl>
+				</li>
+				<li class="layui-nav-item">
+					<a href="javascript:;">代理商管理</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="{WEB_PATH}index.php?m=admin&c=agent&a=alist" target="_right">[代理商列表]</a>
+						</dd>
+						<dd>
+							<a href="{WEB_PATH}index.php?m=admin&c=agent&a=add" target="_right">[添加代理商]</a>
+						</dd>
+					</dl>
+				</li>
+				<li class="layui-nav-item">
+					<a href="javascript:;">销售管理</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="{WEB_PATH}index.php?m=admin&c=salesman&a=alist" target="_right">[销售列表]</a>
+						</dd>
+						<!-- <dd>
+							<a href="{WEB_PATH}index.php?m=admin&c=customer&a=alist" target="_right">[客户管理]</a>
+						</dd> -->
+					</dl>
+				</li>
+				<li class="layui-nav-item">
+					<a href="javascript:;">客户管理</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="{WEB_PATH}index.php?m=admin&c=customer&a=alist" target="_right">[客户列表]</a>
+						</dd>
+					</dl>
+				</li>
+				<li class="layui-nav-item">
+					<a href="javascript:;">产品管理</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="{WEB_PATH}index.php?m=admin&c=product&a=alist" target="_right">[产品列表]</a>
+						</dd>
+						<dd>
+							<a href="{WEB_PATH}index.php?m=admin&c=product&a=add" target="_right">[添加产品]</a>
+						</dd>
+					</dl>
+				</li>
+<!-- 				<li class="layui-nav-item">
+					<a href="">大数据</a>
+				</li>
+				<li class="layui-nav-item">
+					<a href="">社区</a>
+				</li> -->
+			</ul>
+		<script>
+			layui.use('element', function() {
+				var element = layui.element(); //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+			});
+		</script>
+<!- caidan weizhi   -->
+				
+			</div>
+			<div class="layui-body" style="bottom: 0;border-left: solid 2px #1AA094; top:70px;" id="admin-body">
+				<div class="layui-tab admin-nav-card layui-tab-brief" lay-filter="admin-tab">
+					<ul class="layui-tab-title">
+						<li class="layui-this">
+							<i class="fa fa-dashboard" aria-hidden="true"></i>
+							<cite>控制面板</cite>
+						</li>
+					</ul>
+					<div class="layui-tab-content" style="min-height: 150px; padding: 5px 0 0 0;">
+						<div class="layui-tab-item layui-show">
+							<iframe  name='_right' src="{WEB_PATH}index.php?a=add"></iframe>		
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-footer footer footer-demo" id="admin-footer">
+			</div>
+			<div class="site-tree-mobile layui-hide">
+				<i class="layui-icon">&#xe602;</i>
+			</div>
+			<div class="site-mobile-shade"></div>
+			
+			<script type="text/javascript" src="{WEB_PATH}Admin/plugins/layui/layui.js"></script>
+			<script type="text/javascript" src="{WEB_PATH}Admin/datas/nav.js"></script>
+			<script src="{WEB_PATH}Admin/js/index.js"></script>
+		</div>
+	</body>
+</html>

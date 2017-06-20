@@ -1,0 +1,10 @@
+body { color:#333; font-size:14px; font-family:Arial, Helvetica, sans-serif; margin:0; padding:0; background:#FFF url(../img/bg.jpg) center repeat-y}
+a { color:#333; text-decoration:none; font-size:14px; }
+a:hover { color:#F60 }
+ul, li { margin:0; padding:0; list-style:none }
+p, h1, h2, h3, h4, h5, h6, dl, dd, dt { margin:0; padding:0 }
+img { border:0 }
+form { margin:0; padding:0 }
+table{border-collapse:collapse}
+/*清除浮动*/
+.clear { clear:both }

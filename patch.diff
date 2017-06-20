@@ -1,0 +1,25 @@
+From 2e10fde90c60b11dd79af0cf9e450e757e489330 Mon Sep 17 00:00:00 2001
+From: Xue123123 <1580871229@qq.com>
+Date: Mon, 17 Apr 2017 15:38:35 +0800
+Subject: [PATCH] 2
+
+---
+ system/modules/sale/index.class.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/system/modules/sale/index.class.php b/system/modules/sale/index.class.php
+index 18a31b5..00345fc 100644
+--- a/system/modules/sale/index.class.php
++++ b/system/modules/sale/index.class.php
+@@ -36,7 +36,7 @@ class index extends sale {
+ 		}
+ 		templateShow('sale/login');
+ 	}
+-
++	
+ 	function question(){
+ 	   templateShow('sale/question');
+ 	}
+-- 
+2.6.3.windows.1
+
